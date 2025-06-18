@@ -52,23 +52,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['ui.admin']], function () {
     require_once __DIR__ . '/webapp/admin.php';
 });
 
-/* End web */
-/* Start api */
-/* Restapi api */
-Route::group(['prefix' => 'api/v1/r_'], function () {
-    require_once __DIR__ . '/api/restapi.php';
-});
-/* User api */
-Route::group(['prefix' => 'api/v1/r_user', 'middleware' => ['api.user']], function () {
-    require_once __DIR__ . '/api/user.php';
-});
-/* Moderator api */
-Route::group(['prefix' => 'api/v1/r_moderator', 'middleware' => ['api.moderator']], function () {
-    require_once __DIR__ . '/api/moderator.php';
-});
-/* Admin api */
-Route::group(['prefix' => 'api/v1/r_admin', 'middleware' => ['api.admin']], function () {
-    require_once __DIR__ . '/api/admin.php';
-});
-
 
