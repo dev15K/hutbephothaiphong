@@ -365,7 +365,7 @@
 
     <link rel='stylesheet' id='flatsome-style-css' href='{{ asset('ui/vendor/flatsome/styleafc7.css') }}'
           type='text/css' media='all'/>
-    <script type="text/javascript" src="{{ asset('ui/js/jquery/jquery.minf43b.js') }}" id="jquery-core-js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ asset('ui/js/jquery/jquery-migrate.min5589.js') }}"
             id="jquery-migrate-js"></script>
     <link rel="canonical" href="{{ route('home') }}"/>
@@ -1419,9 +1419,6 @@
         font-size: var(--wp--preset--font-size--x-large) !important;
     }
 </style>
-<script type="text/javascript"
-        src="{{ asset('ui/vendor/flatsome/inc/extensions/flatsome-live-search/flatsome-live-searchafc7.js') }}"
-        id="flatsome-live-search-js"></script>
 <script type="text/javascript" src="{{ asset('ui/js/dist/vendor/wp-polyfill-inert.min0226.js') }}"
         id="wp-polyfill-inert-js"></script>
 <script type="text/javascript" src="{{ asset('ui/js/dist/vendor/regenerator-runtime.min6c85.js') }}"
@@ -1429,9 +1426,6 @@
 <script type="text/javascript" src="{{ asset('ui/js/dist/vendor/wp-polyfill.min2c7c.js') }}"
         id="wp-polyfill-js"></script>
 <script type="text/javascript" src="{{ asset('ui/js/hoverIntent.min3e5a.js') }}" id="hoverIntent-js"></script>
-<script type="text/javascript"
-        src="{{ asset('ui/vendor/flatsome/assets/js/flatsome554a.js') }}"
-        id="flatsome-js-js"></script>
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/intersection-observer-polyfill@0.1.0/dist/IntersectionObserver.js?ver=0.1.0"
         id="intersection-observer-polyfill-js"></script>
