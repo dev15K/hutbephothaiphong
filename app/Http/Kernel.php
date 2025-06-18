@@ -2,6 +2,11 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\api\AuthenticatePermission;
+use App\Http\Middleware\api\CheckAdminPermission;
+use App\Http\Middleware\api\CheckModeratorPermission;
+use App\Http\Middleware\ui\CheckAdminRole;
+use App\Http\Middleware\ui\CheckModeratorRole;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -36,6 +41,8 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\SetLanguage::class,
+            \Illuminate\Session\Middleware\StartSession::class,
         ],
 
         'api' => [
@@ -48,7 +55,7 @@ class Kernel extends HttpKernel
     /**
      * The application's middleware aliases.
      *
-     * Aliases may be used to conveniently assign middleware to routes and groups.
+     * Aliases may be used instead of class names to conveniently assign middleware to routes and groups.
      *
      * @var array<string, class-string|string>
      */
@@ -60,8 +67,15 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
+        'precognitive' => \Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests::class,
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        /* Middleware */
+        'api.admin' => CheckAdminPermission::class,
+        'api.moderator' => CheckModeratorPermission::class,
+        'api.user' => AuthenticatePermission::class,
+        'ui.admin' => CheckAdminRole::class,
+        'ui.moderator' => CheckModeratorRole::class,
     ];
 }

@@ -8,6 +8,7 @@
 .env
 .env.backup
 .env.production
+.phpunit.result.cache
 Homestead.json
 Homestead.yaml
 auth.json
@@ -16,8 +17,30 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-########
-.idea
-.idea*
-*.idea*
-########
+#idea
+.idea/**
+# AWS User-specific
+.idea/**/aws.xml
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+#
+composer.lock
+package-lock.json
+~*~
+~*
+*~
+.DS_Store
